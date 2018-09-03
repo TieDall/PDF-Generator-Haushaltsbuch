@@ -13,7 +13,7 @@ public class PDFGenerator {
         
     @WebMethod
     public void createPDF() throws IOException {
-        PDF.generateBarchart();
+        PDF.generatePiechart();
     }
     
 }

@@ -37,19 +37,19 @@ public class PDF {
         chart.addSeries("Nutten", 500);
         //new SwingWrapper<PieChart>(chart).displayChart();
 
-        BitmapEncoder.saveBitmap(chart, "./Piechart", BitmapEncoder.BitmapFormat.PNG);
+        BitmapEncoder.saveBitmap(chart, "C:/xampp/htdocs/Piechart", BitmapEncoder.BitmapFormat.PNG);
             
         PDDocument document = new PDDocument();
         PDPage page = new PDPage();
         document.addPage(page);
         
-        PDImageXObject pdImage = PDImageXObject.createFromFile("./Piechart.png", document);
+        PDImageXObject pdImage = PDImageXObject.createFromFile("C:/xampp/htdocs/Piechart.png", document);
         PDPageContentStream contentStream = new PDPageContentStream(document, page);
         
         contentStream.drawImage(pdImage, 0, 792-300);
         contentStream.close();
         
-        document.save("Piechart.pdf");
+        document.save("C:/xampp/htdocs/Piechart.pdf");
         document.close();
         
         System.out.println("Piechart done");
