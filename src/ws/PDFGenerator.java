@@ -11,9 +11,14 @@ import logic.PDF;
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class PDFGenerator {
         
-    @WebMethod
-    public void createPDF() throws IOException {
+    @WebMethod(operationName = "createPieChart")
+    public void createPiePDF() throws IOException {
         PDF.generatePiechart();
+    }
+    
+    @WebMethod(operationName = "createBarChart")
+    public void createBarPDF() throws IOException {
+        PDF.generateBarchart();
     }
     
 }
